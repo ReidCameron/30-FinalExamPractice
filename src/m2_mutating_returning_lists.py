@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  MUTATING  and  RETURNING-NEW  LISTS.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Cameron Reid.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -83,6 +83,28 @@ def run_test_doubler():
     # TO DO 2 (continued): Add your ADDITIONAL test(s) here:
     # ------------------------------------------------------------------
 
+    # Test 1:
+    arg1 = [0, 5, -5, 12,-1]
+    arg2 = [1,2,3,4]
+    correct_arg1_after = [0,10,-10,24,-2]
+    correct_arg2_after = [1,2,3,4]
+    expected = [2,4,6,8]
+
+    print()
+    print('BEFORE the function call:')
+    print('  Argument 1 is:', arg1)
+    print('  Argument 2 is:', arg2)
+
+    answer = doubler(arg1, arg2)
+
+    print('AFTER the function call:')
+    print('  Argument 1 is:       ', arg1)
+    print('  Argument 1 should be:', correct_arg1_after)
+    print('  Argument 2 is:       ', arg2)
+    print('  Argument 2 should be:', correct_arg2_after)
+    print('The returned value is:       ', answer)
+    print('The returned value should be:', expected)
+
 
 def doubler(list1, list2):
     """
@@ -110,8 +132,12 @@ def doubler(list1, list2):
     #    DIFFICULTY:      4
     #    TIME ESTIMATE:   5 minutes.
     # ------------------------------------------------------------------
-
-
+    new_list = []
+    for k in range(len(list1)):
+        list1[k] = 2*list1[k]
+    for i in range(len(list2)):
+        new_list.append(2*list2[i])
+    return new_list
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------

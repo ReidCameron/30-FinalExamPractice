@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  FOR and WHILE loops.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Cameron Reid.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -135,6 +135,31 @@ def run_test_practice_problem3():
     #             that they are adequate tests!
     ####################################################################
 
+    #Test1
+    print()
+    answer = practice_problem3(0, 3, 1.1)
+    expected=[1, 7, 13]
+    print("Expected:",  expected)
+    print("Answer:", answer)
+    if expected == answer:
+        print("Your code PASSED this test")
+    else:
+        print("Your code DID NOT PASS this test")
+
+    #Test2
+    print()
+    answer = practice_problem3(-5, 4, .65)
+    expected=[-5,0,1,6]
+    print("Expected:",  expected)
+    print("Answer:", answer)
+    if expected == answer:
+        print("Your code PASSED this test")
+    else:
+        print("Your code DID NOT PASS this test")
+
+
+
+
 
 def practice_problem3(start, n, threshold):
     """
@@ -216,8 +241,15 @@ def practice_problem3(start, n, threshold):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   < 15 minutes.
     ####################################################################
-
-
+    new_list =[]
+    k=0
+    while True:
+        if len(new_list) == n:
+            break
+        if math.sin(start + k)+math.cos(start+k) > threshold:
+            new_list.append(start+k)
+        k = k + 1
+    return new_list
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------

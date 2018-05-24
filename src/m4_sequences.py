@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  SEQUENCES.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Cameron Reid.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -35,10 +35,10 @@ import rosegraphics as rg
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_practice_problem4a()
+    # run_test_practice_problem4a()
     run_test_practice_problem4b()
-    run_test_practice_problem4c()
-    run_test_practice_problem4d()
+    # run_test_practice_problem4c()
+    # run_test_practice_problem4d()
 
 
 def is_prime(n):
@@ -134,14 +134,18 @@ def practice_problem4a(sequence):
       :type sequence: list | tuple | string
     """
     ####################################################################
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 minutes.
     ####################################################################
-
+    new_list = []
+    for k in range(len(sequence)-1):
+        if sequence[k] == sequence[k+1]:
+            new_list.append(k)
+    return new_list
 
 def run_test_practice_problem4b():
     """ Tests the    practice_problem4b    function. """
@@ -204,7 +208,11 @@ def practice_problem4b(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
-
+    largest_number = sequence[0]
+    for k in range(len(sequence)//2):
+        if sequence[2*k] > largest_number:
+            largest_number = sequence[2*k]
+    return largest_number
 
 def run_test_practice_problem4c():
     """ Tests the    practice_problem4c    function. """
